@@ -1,21 +1,24 @@
 defmodule PoudriereElixirWeb.Endpoint do
   use Plug.Builder
 
+  @data_dir "/home/poudriere/data/logs/bulk"
+  @packages_dir "/home/poudriere/data"
+  @shared_dir "/home/poudriere/shared-html"
+
   #plug Plug.Logger
 
   plug Plug.Static,
-    at: "/data", from: "/home/poudriere/data/logs/bulk"
+    at: "/data", from: @data_dir
   plug PlugStaticLs,
-    at: "/data", from: "/home/poudriere/data/logs/bulk"
+    at: "/data", from: @data_dir
 
   plug Plug.Static,
-    at: "/packages", from: "/home/poudriere/data"
+    at: "/packages", from: @packages_dir
   plug PlugStaticLs,
-    at: "/packages", from: "/home/poudriere/data"
+    at: "/packages", from: @packages_dir
 
   plug Plug.Static.IndexHtml, at: "/"
-  plug Plug.Static,
-    at: "/", from: "/home/poudriere/shared-html", gzip: false
+  plug Plug.Static, at: "/", from: @shared_dir
 
   plug :not_found
   plug :halt
@@ -32,9 +35,13 @@ defmodule PoudriereElixirWeb.Endpoint do
     options
   end
 
+  defp get_env(name, defval) do
+    Application.get_env(:poudriere_elixir_web, name, defval)
+  end
+
   def start_link() do
     {:ok, _} = Plug.Adapters.Cowboy.http PoudriereElixirWeb.Endpoint, [],
-      port: 8080
-      #ip: {127, 0, 0, 1} # set your own IP
+    port: get_env(:port, 8080),
+    ip: get_env(:ip, {127, 0, 0, 1})
   end
 end
