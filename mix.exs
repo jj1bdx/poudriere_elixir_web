@@ -31,7 +31,7 @@ defmodule PoudriereElixirWeb.Mixfile do
 
   def application do
     [mod: {PoudriereElixirWeb, []},
-    applications: [:plug_static_index_html, :plug_static_ls, :cowboy, :logger]]
+    applications: [:cowboy, :logger]]
   end
 
   defp elixirc_paths(:test), do: ["lib", "server-example", "test/support"]
