@@ -31,7 +31,8 @@ defmodule PoudriereElixirWeb.Mixfile do
 
   def application do
     [mod: {PoudriereElixirWeb, []},
-    applications: [:plug, :cowboy, :logger]]
+    applications: [:plug_static_ls, :plug_static_index_html,
+      :plug, :cowboy, :logger]]
   end
 
   defp elixirc_paths(:test), do: ["lib", "server-example", "test/support"]
@@ -44,7 +45,8 @@ defmodule PoudriereElixirWeb.Mixfile do
       {:plug, "~> 1.3"},
       {:cowboy, "~> 1.0"},
       {:ex_doc, "~> 0.14", only: :dev},
-      {:dialyxir, "~> 0.4", only: [:dev], runtime: false}
+      {:dialyxir, "~> 0.4", only: [:dev], runtime: false},
+      {:exrm, "~> 1.0"},
     ]
   end
 
