@@ -46,7 +46,7 @@ defmodule PoudriereElixirWeb.Mixfile do
       {:cowboy, "~> 1.0"},
       {:ex_doc, "~> 0.14", only: :dev},
       {:dialyxir, "~> 0.4", only: [:dev], runtime: false},
-      {:exrm, "~> 1.0"},
+      {:exrm, "~> 1.0"}
     ]
   end
 
