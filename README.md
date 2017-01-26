@@ -8,7 +8,7 @@ Web server for viewing [Poudriere](https://github.com/freebsd/poudriere) results
 
 Poudriere requires the following contents to be served:
 
-* Static contents of Poudriere itself in `/` at: `/usr/local/share/poudriere/html` with*out* directory index;
+* Static contents of Poudriere itself in `/` at: `/home/poudriere/static-html` with*out* directory index;
 * Logs in `/data` at: `/home/poudriere/data/logs/bulk` with directory index; and
 * Packages in `/packages` at: `/home/poudriere/data` with directory index.
 
@@ -68,7 +68,7 @@ plug PlugStaticLs,
 
 ```elixir
 plug Plug.Static.IndexHtml, at: "/"
-plug Plug.Static, at: "/", from: @shared_dir
+plug Plug.Static, at: "/", from: "/home/poudriere/static-html"
 ```
 
 ### Responding to unknown paths
