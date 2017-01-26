@@ -117,3 +117,8 @@ rel/poudriere_elixir_web/bin/poudriere_elixir_web start
 
 * Conform hasn't been included yet: use `config` files
 
+## References
+
+* [How To Set Up a Poudriere Build System to Create Packages for your FreeBSD Servers](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-poudriere-build-system-to-create-packages-for-your-freebsd-servers)
+* [Poudriere at GitHub](https://github.com/freebsd/poudriere)
+
