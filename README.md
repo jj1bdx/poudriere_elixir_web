@@ -20,7 +20,7 @@ Poudriere needs the following MIME types to be served:
 text/plain                          txt log;
 ```
 
-The above types are already specified in the MIME module of Elixir.
+The above type is already specified in the MIME module of Elixir.
 
 ### Server code
 
@@ -101,6 +101,7 @@ elixir --detached -S mix do compile, run --no-halt
 
 ```sh
 mix do deps.get, compile
+MIX_ENV=prod mix compile
 MIX_ENV=prod mix release
 rel/poudriere_elixir_web/bin/poudriere_elixir_web start
 ```
