@@ -17,18 +17,10 @@ Poudriere requires the following contents to be served:
 Poudriere needs the following MIME types to be served:
 
 ```
-text/mathml                         mml;
 text/plain                          txt log;
-text/vnd.sun.j2me.app-descriptor    jad;
 ```
 
-The following entry must be added to `config/config.exs` to enable the MIME type header for `.mml` as `text/mathml`:
-
-```elixir
-config :mime, :types, %{
-  "text/mathml" => ["mml"]
-}
-```
+The above types are already specified in the MIME module of Elixir.
 
 ### Server code
 
