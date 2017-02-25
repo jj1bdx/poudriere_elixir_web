@@ -85,8 +85,8 @@ end
 * Copy static files of Poudriere to `/home/poudriere/static-html`, by:
 
 ```sh
-mkdir /home/poudriere/static-html
-cp -pr /usr/local/share/poudriere/html/* /home/poudriere/static-html
+mkdir /home/poudriere/shared-html
+cp -pr /usr/local/share/poudriere/html/* /home/poudriere/shared-html
 ```
 
 * Configure IP address and port in `config/` files at `config/dev.exs` and `config/prod.exs`
