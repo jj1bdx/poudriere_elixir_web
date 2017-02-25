@@ -82,7 +82,7 @@ end
 
 ## How to run
 
-* Copy static files of Poudriere to `/home/poudriere/static-html`, by:
+* Copy shared static files of Poudriere to `/home/poudriere/shared-html`, by:
 
 ```sh
 mkdir /home/poudriere/shared-html
