@@ -40,9 +40,9 @@ defmodule PoudriereElixirWeb.Mixfile do
 
   defp deps do
     [
-      {:plug_static_ls, "~> 0.6.0"},
+      {:plug_static_ls, "~> 0.6.1"},
       {:plug_static_index_html, "~> 0.1.2"},
-      {:plug, "~> 1.3"},
+      {:plug, "~> 1.3.2"},
       {:cowboy, "~> 1.0"},
       {:ex_doc, "~> 0.14", only: :dev},
       {:dialyxir, "~> 0.4", only: [:dev], runtime: false},
