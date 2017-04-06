@@ -85,11 +85,12 @@ end
 * Copy shared static files of Poudriere to `/home/poudriere/shared-html`, by:
 
 ```sh
+umask 022 # required to provide world-readable access
 mkdir /home/poudriere/shared-html
 cp -pr /usr/local/share/poudriere/html/* /home/poudriere/shared-html
 ```
 
-* Configure IP address and port in `config/` files at `config/dev.exs` and `config/prod.exs`
+* Configure IP address and port in `config/dev.exs`, and copy the file to `config/prod.exs`
 
 * To run the server, do this:
 
